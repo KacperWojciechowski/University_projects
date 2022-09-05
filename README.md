@@ -65,3 +65,15 @@ A circuit symulating the work of onboard car system, with functionalities such a
 ##### Operation mode
 
 The system is build based on Arduino Uno Rev III. It consists of various sensors simulating a system that might be found in a car. To simulate engine, a DC motor was used, with several speed levels available, based on a flex sensor position (simulating a gas pedal). The controller monitors all the sensors displaying relevant information on an LCD display board, such as temperature info, door open info, air quality info. 
+
+----------------------------------------------------------------------------
+
+### Morse code station
+
+##### General idea
+
+A station allowing translation to and from morse code, displaying the message on LCD screen and sending it via serial port to an overseeing computer.
+
+##### Operation mode
+
+The control panel offers user several buttons. First two buttons select a letter from an english alphabet, third button accepts the letter and fourth button deletes previously accepted letter. By using them, the user can create a message to be translated to morse code. Message is translated after pressing the send button, which is 5th in order. The 6th button is a morse code switch, allowing user to input letters in a morse code signal. This signal is automatically translated after each letter input (the acceptance of the letter is signified by a longer pause from pressing the morse button). 
