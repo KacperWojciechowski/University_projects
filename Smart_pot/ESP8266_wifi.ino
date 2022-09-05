@@ -4,7 +4,7 @@
 #include <Wire.h>
 
 
-#define WIFI_AP             "iPhone (Klaudia)"
+#define WIFI_AP             "iPhone"
 #define WIFI_PASSWORD       "ziumzium1"
 
 // See https://thingsboard.io/docs/getting-started-guides/helloworld/
@@ -13,8 +13,7 @@
 #define THINGSBOARD_SERVER  "demo.thingsboard.io"
 
 // Baud rate for debug serial
-#define SERIAL_DEBUG_BAUD   115200
-#define SERIAL_MEASURE_BAUD 115200
+#define SERIAL_BAUD   115200
 
 // Initialize ThingsBoard client
 WiFiClient espClient;
@@ -28,7 +27,7 @@ char humidity_c;
 
 void setup() {
   // initialize serial for debugging
-  Serial.begin(SERIAL_DEBUG_BAUD);
+  Serial.begin(SERIAL_BAUD);
   WiFi.begin(WIFI_AP, WIFI_PASSWORD);
   InitWiFi();
 }

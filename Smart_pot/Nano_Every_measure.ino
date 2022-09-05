@@ -37,11 +37,5 @@ void loop()
     Serial1.print(light_c);
     Serial1.print(humidity_c);
 
-    /*short val = ((light & 0xFF) << 8) | (humidity & 0xFF);
-
-    Serial.print("val = ");
-    Serial.println(val, BIN);
-    Serial1.print(val);*/
-
     delay(2000);
 }
