@@ -39,3 +39,17 @@ A simple temperature monitor based on a laboratory board equiped with 8-bit ADC,
 ##### Operation mode
 
 The program monitors the temperature and potentiometer reads, displaying them on LCD and LEDs respectively. It utilizes ADC interrupt to read the result of a conversion, yet due to lack of semaphores on this platform, the main function polls on a flag while waiting for the interrupt to occur. The ADC read of the temperature is then manually converted into string (due to malfunctioning of the sprintf function on this platform) and displayed on an LCD. 
+
+----------------------------------------------------------------------------
+
+### Smart Pot
+
+##### General idea
+
+A smart pot IoT solution consisting of two microcontrollers communicating via UART, monitoring a plant environment. The data provided by the system can be accessed and processed by the Thingsboard platform.
+
+##### Operation mode
+
+The system is modular, designed for Arduino Nano Every as a measuring module, and Huzzah ESP8266 as an Internet communication module. The Nano Every module reads the measurements from analog soil humidity sensor and insolation sensor, maps it to a percentage range from 0 to 100%, outputs the processed data via serial port to a computer and passes the data via another serial port to the communication module. The ESP8266 module connects to the Thingsboard platform via WiFi network of given SSID and password (embedded in the code), awaits data from the measuring module, and passes the data to the Thingsboard cloud platform. Communication module outputs diagnostic information on the common serial port (used both by the computer and measuring module) however the measuring module ignores any information it receives from the communication module.
+
+Tested with demo.thingsboard.io.
