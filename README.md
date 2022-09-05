@@ -53,3 +53,15 @@ A smart pot IoT solution consisting of two microcontrollers communicating via UA
 The system is modular, designed for Arduino Nano Every as a measuring module, and Huzzah ESP8266 as an Internet communication module. The Nano Every module reads the measurements from analog soil humidity sensor and insolation sensor, maps it to a percentage range from 0 to 100%, outputs the processed data via serial port to a computer and passes the data via another serial port to the communication module. The ESP8266 module connects to the Thingsboard platform via WiFi network of given SSID and password (embedded in the code), awaits data from the measuring module, and passes the data to the Thingsboard cloud platform. Communication module outputs diagnostic information on the common serial port (used both by the computer and measuring module) however the measuring module ignores any information it receives from the communication module.
 
 Tested with demo.thingsboard.io.
+
+----------------------------------------------------------------------------
+
+### Car system
+
+##### General idea
+
+A circuit symulating the work of onboard car system, with functionalities such as engine acceleration, drive/reverse gear shifting, door open sensors, windows control, air quality sensor, engine temperature sensor, daylight sensor and headlights control and LCD status display. 
+
+##### Operation mode
+
+The system is build based on Arduino Uno Rev III. It consists of various sensors simulating a system that might be found in a car. To simulate engine, a DC motor was used, with several speed levels available, based on a flex sensor position (simulating a gas pedal). The controller monitors all the sensors displaying relevant information on an LCD display board, such as temperature info, door open info, air quality info. 
