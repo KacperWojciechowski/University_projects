@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1621087806 source:e:\repozytoria\c\mcs51 - temp and lcd\main.c
+	<8052.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<labtm_lcd.h>
+
+1612776746 e:\repozytoria\c\mcs51 - temp and lcd\liblcd\labtm_lcd.h
+
