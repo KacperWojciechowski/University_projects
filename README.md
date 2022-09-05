@@ -27,3 +27,15 @@ A simple system allowing user to monitor data read from an MCU6050 IMU via an OL
 ##### Operation mode
 
 The program is designed to work with Arduino Due. It is constructed as a final state machine, allowing user to switch between modes by pressing a button. Each mode displays data from different MCU6050 sensor (accelerometer, gyroscope, termometer). Current mode is signalized via a different color LED diode. The data is displayed in following units respectively: m/s^2, radians, Celsius.
+
+----------------------------------------------------------------------------
+
+### MCS51 Temperature monitor
+
+##### General idea
+
+A simple temperature monitor based on a laboratory board equiped with 8-bit ADC, potentiometer array of LEDs, LDC display and a temperature sensor.
+
+##### Operation mode
+
+The program monitors the temperature and potentiometer reads, displaying them on LCD and LEDs respectively. It utilizes ADC interrupt to read the result of a conversion, yet due to lack of semaphores on this platform, the main function polls on a flag while waiting for the interrupt to occur. The ADC read of the temperature is then manually converted into string (due to malfunctioning of the sprintf function on this platform) and displayed on an LCD. 
