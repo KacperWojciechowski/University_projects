@@ -25,12 +25,6 @@ void disp_binary_as_dec_str(unsigned char val); /* Display binary value as strin
 void handle_interrupt(void) __interrupt(0);     /* Interrupt callback for ADC */
 
 void main(void) {
-    LabTM_LCD_Init();                   /* LCD initialization */
-    LabTM_LCD_SetPosition(1, 1);        /* Set cursor at LCD origin */
-    LabTM_LCD_PrintChar('A');           /* Display a character */
-    LabTM_LCD_SetPosition(2, 1);        /* Set cursor in second line */
-    LabTM_LCD_PrintString("Test");      /* Display string */
-
     proceed = 0;
 
     while(1) {
@@ -106,7 +100,7 @@ void disp_temperature_val(unsigned char adc_read) {
         temp /= 10;
     }
 
-    buffer[i] = '.';                        /* Insert comma separator */
+    buffer[i] = '.';  /* Insert comma separator */
     i++;                                    
 
     /* Convert the integer part of the read and append to the buffer */
@@ -122,8 +116,8 @@ void disp_temperature_val(unsigned char adc_read) {
         i++;
     }
 
-    buffer[i] = '\0';                       /* End the string */
-    reverse_str(buffer);                    /* Reverse the string to obtain correct digits order */
+    buffer[i] = '\0';      /* End the string */
+    reverse_str(buffer);   /* Reverse the string to obtain correct digits order */
 
     /* Display the temperature value */
     LabTM_LCD_SetPosition(1, 1);
@@ -132,14 +126,14 @@ void disp_temperature_val(unsigned char adc_read) {
     LabTM_LCD_PrintString(buffer);
     LabTM_LCD_PrintString(" *C");
 
-    free(buffer);                           /* Free the buffer */
+    free(buffer);  /* Free the buffer */
 }
 
 /* Reverse string function */
 void reverse_str(char str[]) {
-    unsigned char length;               /* String length */
-    char temp;                          /* Value swap temporary variable */
-    length = strlen(str);               /* Read the string length */
+    unsigned char length;  /* String length */
+    char temp;             /* Value swap temporary variable */
+    length = strlen(str);  /* Read the string length */
     i = 0;
 
     /* Reverse the string */
