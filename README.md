@@ -14,3 +14,16 @@ A relatively portable alarm system equipped with 2 PIR sensors and 1 ultrasonic 
 ##### Operation mode
 
 The system is designed to be constructed with Arduino Uno Rev III. It operates on an idea of finite state machine, allowing user to controll all modules at once or each module separately. Additionally, the system contains an LCD display and a panel of different colour LED diodes signalizing the state of each module within the system. The armed / disarmed LED signals are connected together via a logic inverter, saving on control pins in microcontroller. Numpad is operated as a resistance keyboard using an analog input of the used microcontroller.
+
+----------------------------------------------------------------------------
+
+### IMU FSM System
+
+##### General idea
+
+A simple system allowing user to monitor data read from an MCU6050 IMU via an OLED display. 
+
+
+##### Operation mode
+
+The program is designed to work with Arduino Due. It is constructed as a final state machine, allowing user to switch between modes by pressing a button. Each mode displays data from different MCU6050 sensor (accelerometer, gyroscope, termometer). Current mode is signalized via a different color LED diode. The data is displayed in following units respectively: m/s^2, radians, Celsius.
